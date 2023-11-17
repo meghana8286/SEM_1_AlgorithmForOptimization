@@ -1,0 +1,21 @@
+#1 Rectangular Contour Plot
+
+# Install the Plots package if you haven't already
+import Pkg
+Pkg.add("Plots")
+
+# Import the Plots package
+using Plots
+
+# Create a function that defines the surface
+f(x, y) = sin(x) + cos(y)
+
+# Generate x and y values for the plot
+x = -5:0.1:5
+y = -5:0.1:5
+
+# Generate a grid of z values using the function f(x, y)
+z = [f(xi, yi) for xi in x, yi in y]
+
+# Create a rectangular contour plot
+contour(x, y, z, levels = 20, xlabel = "X-axis", ylabel = "Y-axis", title = "Rectangular Contour Plot")
